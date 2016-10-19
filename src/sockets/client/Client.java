@@ -1,6 +1,8 @@
 package sockets.client;
 
+import java.io.BufferedReader;
 import java.io.IOException;
+import java.io.InputStreamReader;
 import java.io.OutputStream;
 import java.net.InetAddress;
 import java.net.Socket;
@@ -14,8 +16,14 @@ public class Client {
 		OutputStream outputStream = client.getOutputStream();
 
 		outputStream.write("Hello".getBytes());
-
+				
+		InputStreamReader input = new InputStreamReader(client.getInputStream());
+   		BufferedReader reader = new BufferedReader(input);
+   		System.out.println(reader.readLine());
+   		
+   		System.out.println("Foo");
 		client.close();
+		
 	}
 
 	public static void main(String[] args) {

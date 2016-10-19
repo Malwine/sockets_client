@@ -13,7 +13,7 @@ public class Client {
 
 		OutputStream outputStream = client.getOutputStream();
 
-		outputStream.write("Hello World!".getBytes());
+		outputStream.write("Hello".getBytes());
 
 		client.close();
 	}

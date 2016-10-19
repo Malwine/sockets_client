@@ -15,13 +15,13 @@ public class Client {
 
 		OutputStream outputStream = client.getOutputStream();
 
-		outputStream.write("Hello".getBytes());
+		outputStream.write("Hello\n".getBytes());
+		outputStream.flush();
 				
 		InputStreamReader input = new InputStreamReader(client.getInputStream());
    		BufferedReader reader = new BufferedReader(input);
    		System.out.println(reader.readLine());
-   		
-   		System.out.println("Foo");
+
 		client.close();
 		
 	}

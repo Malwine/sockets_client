@@ -15,9 +15,17 @@ public class Client {
 
 		OutputStream outputStream = client.getOutputStream();
 
-		outputStream.write("Hello\n".getBytes());
+		//Aufgabe2f:
+		//outputStream.write("Hello\n".getBytes());
+	    
+		//Starts Aufgabe 3+4 with command "Add"
+		outputStream.write("Add 1 2 3\n".getBytes());
+		
 		outputStream.flush();
-				
+		
+		// We might want to send back the result of the commands to the client. 
+		// At the moment the results are simply output to the console through Protocol#process.
+		
 		InputStreamReader input = new InputStreamReader(client.getInputStream());
    		BufferedReader reader = new BufferedReader(input);
    		System.out.println(reader.readLine());

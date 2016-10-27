@@ -19,7 +19,12 @@ public class Client {
 		//outputStream.write("Hello\n".getBytes());
 	    
 		//Starts Aufgabe 3+4 with command "Add"
-		outputStream.write("Add 1 2 3\n".getBytes());
+		//outputStream.write("Add 1 2 3\n".getBytes());
+		
+		//Tests the other commands by commenting out the others
+		outputStream.write("Subtract 1 2 3\n".getBytes());
+		outputStream.write("Multiply 1 2 3\n".getBytes());
+		outputStream.write("Hello Malwine\n".getBytes());
 		
 		outputStream.flush();
 		

@@ -35,7 +35,8 @@ public class Client {
 		
 		Scanner scanner = new Scanner(System.in);
 		String consoleInput = scanner.nextLine();
-		while(consoleInput != "exit") {
+		
+		while(!consoleInput.equals("exit")) {
 			System.out.println("hey" + consoleInput);
 			writer.println(consoleInput);
 			

@@ -34,17 +34,17 @@ public class Client {
 		//outputStream.flush();
 		
 		Scanner scanner = new Scanner(System.in);
-		
 		String consoleInput = scanner.nextLine();
-		System.out.println(consoleInput);
-		writer.println(consoleInput);
-		
-		// We might want to send back the result of the commands to the client. 
-		// At the moment the results are simply output to the console through Protocol#process.
-		
-		InputStreamReader input = new InputStreamReader(client.getInputStream());
-   		BufferedReader reader = new BufferedReader(input);
-   		System.out.println(reader.readLine());
+		while(consoleInput != "exit") {
+			System.out.println("hey" + consoleInput);
+			writer.println(consoleInput);
+			
+			InputStreamReader input = new InputStreamReader(client.getInputStream());
+	   		BufferedReader reader = new BufferedReader(input);
+	   		System.out.println(reader.readLine());
+	   		consoleInput = scanner.nextLine();
+	   		System.out.println(consoleInput);
+		}
 
 		client.close();
 		

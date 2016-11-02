@@ -12,6 +12,9 @@ public class Client {
 	
 	public static void client() throws IOException {
 		Socket client =  new Socket(InetAddress.getLocalHost(), 8080);
+		//for remote servers use the server IP:
+		//Socket client =  new Socket("141.45.208.54", 8080);
+
 
 		OutputStream outputStream = client.getOutputStream();
 

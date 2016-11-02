@@ -37,16 +37,16 @@ public class Client {
 		String consoleInput = scanner.nextLine();
 		
 		while(!consoleInput.equals("exit")) {
-			System.out.println("hey" + consoleInput);
 			writer.println(consoleInput);
 			
 			InputStreamReader input = new InputStreamReader(client.getInputStream());
 	   		BufferedReader reader = new BufferedReader(input);
 	   		System.out.println(reader.readLine());
 	   		consoleInput = scanner.nextLine();
-	   		System.out.println(consoleInput);
+	   		//System.out.println(consoleInput);
 		}
-
+		
+		scanner.close();
 		client.close();
 		
 	}

@@ -6,6 +6,7 @@ import java.io.InputStreamReader;
 import java.io.OutputStream;
 import java.net.InetAddress;
 import java.net.Socket;
+import java.util.Scanner;
 
 
 public class Client {
@@ -25,10 +26,17 @@ public class Client {
 		//outputStream.write("Add 1 2 3\n".getBytes());
 		
 		//Tests the other commands by commenting out the others
-		outputStream.write("Subtract 1 2 3\n".getBytes());
+		//outputStream.write("Subtract 1 2 3\n".getBytes());
 		//outputStream.write("Multiply 1 2 3\n".getBytes());
 		//outputStream.write("Hello Malwine\n".getBytes());
 		//outputStream.write("Subtract hello\n".getBytes());
+		//outputStream.flush();
+		
+		Scanner scanner = new Scanner(System.in);
+		
+		String consoleInput = scanner.next();
+		System.out.println(consoleInput);
+		outputStream.write(consoleInput.getBytes());
 		outputStream.flush();
 		
 		// We might want to send back the result of the commands to the client. 

@@ -4,6 +4,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.OutputStream;
+import java.io.PrintWriter;
 import java.net.InetAddress;
 import java.net.Socket;
 import java.util.Scanner;
@@ -18,7 +19,7 @@ public class Client {
 
 
 		OutputStream outputStream = client.getOutputStream();
-
+		PrintWriter writer = new PrintWriter(outputStream, true);
 		//Aufgabe2f:
 		//outputStream.write("Hello\n".getBytes());
 	    
@@ -34,10 +35,9 @@ public class Client {
 		
 		Scanner scanner = new Scanner(System.in);
 		
-		String consoleInput = scanner.next();
+		String consoleInput = scanner.nextLine();
 		System.out.println(consoleInput);
-		outputStream.write(consoleInput.getBytes());
-		outputStream.flush();
+		writer.println(consoleInput);
 		
 		// We might want to send back the result of the commands to the client. 
 		// At the moment the results are simply output to the console through Protocol#process.
